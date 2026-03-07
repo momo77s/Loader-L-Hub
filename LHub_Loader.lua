@@ -59,10 +59,10 @@ elseif placeId == 89596967204087 then
 -- ========================================================
 -- 🦈 5. TITAN FISHING [FREE]
 -- ========================================================
-elseif placeId == 101918341695535 then
+elseif placeId == 115893378298440 then
     notify("L-HUB | TITAN", "Game Ditemukan! Loading script Titan Fishing...")
     
-    -- Link Titan Fishing
+    -- Link Titan Fishing (Updated Raw Link)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/momo77s/L-HUB-Titan-Fishing/refs/heads/main/TitanFishing.lua"))()
 
 -- ========================================================
