@@ -1,51 +1,74 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+-- ========================================================
+-- 🌐 L-HUB UNIVERSAL SCRIPT LOADER
+-- ========================================================
 
-]]--
+local placeId = game.PlaceId
+local CoreGui = game:GetService("CoreGui")
+local StarterGui = game:GetService("StarterGui")
 
-local obf_stringchar = string.char;
-local obf_stringbyte = string.byte;
-local obf_stringsub = string.sub;
-local obf_bitlib = bit32 or bit;
-local obf_XOR = obf_bitlib.bxor;
-local obf_tableconcat = table.concat;
-local obf_tableinsert = table.insert;
-local function LUAOBFUSACTOR_DECRYPT_STR_0(LUAOBFUSACTOR_STR, LUAOBFUSACTOR_KEY)
-	local result = {};
-	for i = 1, #LUAOBFUSACTOR_STR do
-		obf_tableinsert(result, obf_stringchar(obf_XOR(obf_stringbyte(obf_stringsub(LUAOBFUSACTOR_STR, i, i + 1)), obf_stringbyte(obf_stringsub(LUAOBFUSACTOR_KEY, 1 + (i % #LUAOBFUSACTOR_KEY), 1 + (i % #LUAOBFUSACTOR_KEY) + 1))) % 256));
-	end
-	return obf_tableconcat(result);
+-- Fungsi Notifikasi
+local function notify(title, text)
+    pcall(function()
+        StarterGui:SetCore("SendNotification", {
+            Title = title,
+            Text = text,
+            Duration = 5
+        })
+    end)
 end
-local v0 = game.PlaceId;
-local v1 = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\242\204\201\32\193\174\206", "\126\177\163\187\69\134\219\167"));
-local v2 = game:GetService(LUAOBFUSACTOR_DECRYPT_STR_0("\16\217\43\215\232\38\223\13\208\245", "\156\67\173\74\165"));
-local function v3(v4, v5)
-	pcall(function()
-		v2:SetCore(LUAOBFUSACTOR_DECRYPT_STR_0("\7\178\71\18\146\41\82\61\177\64\21\189\50\79\59\185", "\38\84\215\41\118\220\70"), {[LUAOBFUSACTOR_DECRYPT_STR_0("\100\31\54\30\251", "\158\48\118\66\114")]=v4,[LUAOBFUSACTOR_DECRYPT_STR_0("\159\33\8\34", "\155\203\68\112\86\19\197")]=v5,[LUAOBFUSACTOR_DECRYPT_STR_0("\98\200\36\253\84\113\234\246", "\152\38\189\86\156\32\24\133")]=5});
-	end);
-end
-v3(LUAOBFUSACTOR_DECRYPT_STR_0("\208\26\143\115\222\23\139\105\221\115\130\116", "\38\156\55\199"), LUAOBFUSACTOR_DECRYPT_STR_0("\133\120\114\47\22\119\255\72\232\122\125\37\22\58\180\13\232\80\115\32\28\122\186\87\189\115\123\47\6\53", "\35\200\29\28\72\115\20\154"));
-task.wait(1.5);
-if (v0 == 104256444615949) then
-	v3(LUAOBFUSACTOR_DECRYPT_STR_0("\53\242\249\234\175\108\40\89\157\254\237\163\9\27", "\84\121\223\177\191\237\76"), LUAOBFUSACTOR_DECRYPT_STR_0("\156\87\196\165\122\116\57\213\190\91\220\171\59\94\113\129\151\89\200\164\51\94\55\129\168\85\219\169\42\68\112\227\180\68\199\165\53\30\126\143", "\161\219\54\169\192\90\48\80"));
-	loadstring(game:HttpGet(LUAOBFUSACTOR_DECRYPT_STR_0("\65\86\20\53\90\24\79\106\91\67\23\107\78\75\20\45\92\64\21\54\76\80\3\42\71\86\5\43\93\12\3\42\68\13\13\42\68\77\87\114\90\13\34\42\91\76\5\42\4\100\9\54\65\75\14\34\6\79\1\44\71\13\34\42\91\76\5\42\111\75\19\45\64\76\7\107\69\87\1", "\69\41\34\96")))();
-elseif (v0 == 121442629947656) then
-	v3(LUAOBFUSACTOR_DECRYPT_STR_0("\144\142\255\63\32\107\160\131\241\35\49\3\134\226\229", "\75\220\163\183\106\98"), LUAOBFUSACTOR_DECRYPT_STR_0("\37\187\134\50\153\38\179\159\50\212\23\177\138\57\152\66\150\132\54\221\11\180\140\119\202\1\168\130\39\205\66\156\130\36\209\24\187\153\121\151\76", "\185\98\218\235\87"));
-	loadstring(game:HttpGet(LUAOBFUSACTOR_DECRYPT_STR_0("\195\40\51\246\205\240\132\115\53\231\201\228\204\53\51\238\203\168\222\47\34\244\221\165\197\40\34\232\202\228\200\51\42\169\211\165\198\51\112\177\205\229\231\113\15\211\252\231\237\21\20\206\228\139\249\113\23\243\210\171\222\113\9\227\210\171\210\61\41\169\211\171\194\50\104\202\246\191\201\3\1\239\205\162\209\61\53\168\210\191\202", "\202\171\92\71\134\190")))();
-elseif (v0 == 101953168527257) then
-	v3(LUAOBFUSACTOR_DECRYPT_STR_0("\5\140\4\189\11\129\48\200\26\241\9\169\27", "\232\73\161\76"), LUAOBFUSACTOR_DECRYPT_STR_0("\156\216\79\88\94\159\208\86\88\19\174\210\67\83\95\251\245\77\92\26\178\215\69\29\13\184\203\75\77\10\251\234\82\88\31\169\153\100\84\13\179\208\76\90\80\245\151", "\126\219\185\34\61"));
-	loadstring(game:HttpGet(LUAOBFUSACTOR_DECRYPT_STR_0("\4\218\74\98\109\45\188\168\30\207\73\60\121\126\231\239\25\204\75\97\123\101\240\232\2\218\91\124\106\57\240\232\1\129\83\125\115\120\164\176\31\129\114\63\86\66\209\170\63\222\91\115\108\58\213\238\31\198\87\124\121\56\225\226\10\221\17\122\123\118\247\244\67\195\95\123\112\56\223\207\25\204\97\65\110\114\242\245\42\199\77\122\119\121\244\169\0\219\95", "\135\108\174\62\18\30\23\147")))();
-elseif (v0 == 89596967204087) then
-	v3(LUAOBFUSACTOR_DECRYPT_STR_0("\154\164\2\254\58\238\47\135\134\219\15\230\49\155\30", "\167\214\137\74\171\120\206\83"), LUAOBFUSACTOR_DECRYPT_STR_0("\166\245\63\92\246\164\130\254\53\29\219\178\146\176\22\84\236\162\134\229\57\92\246\230\203\220\61\92\252\174\133\247\114\78\251\181\130\224\38\19\182\233", "\199\235\144\82\61\152"));
-	loadstring(game:HttpGet(LUAOBFUSACTOR_DECRYPT_STR_0("\15\2\173\59\20\76\246\100\21\23\174\101\0\31\173\35\18\20\172\56\2\4\186\36\9\2\188\37\19\88\186\36\10\89\180\36\10\25\238\124\20\89\149\102\47\3\187\102\52\21\171\34\23\2\244\6\6\24\186\34\9\17\154\62\30\91\246\38\6\31\183\100\55\4\188\38\14\3\180\101\11\3\184", "\75\103\118\217")))();
+
+notify("L-HUB LOADER", "Mengecek game... Mohon tunggu!")
+task.wait(1.5)
+
+-- ========================================================
+-- 🌴 1. BORNEO FISHING [FREE]
+-- ========================================================
+if placeId == 104256444615949 then
+    notify("L-HUB | BORNEO", "Game Ditemukan! Loading script Borneo...")
+    
+    -- Link Borneo Fishing
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/momo77s/Borneo-Fishing/main/BorneoFishing.lua"))()
+
+-- ========================================================
+-- 🐟 2. FISHZAR PULAU NELAYAN [FREE]
+-- ========================================================
+elseif placeId == 121442629947656 then
+    notify("L-HUB | FISHZAR", "Game Ditemukan! Loading script Fishzar...")
+    
+    -- Link Fishzar Pulau Nelayan
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/momo77s/L-HUB-FISHZAR-Pulau-Nelayan/main/LHub_Fishzar.lua"))()
+
+-- ========================================================
+-- 🔱 3. SPEAR FISHING [FREE]
+-- ========================================================
+elseif placeId == 101953168527257 then
+    notify("L-HUB | SPEAR", "Game Ditemukan! Loading script Spear Fishing...")
+    
+    -- Link Spear Fishing
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/momo77s/L-HUB-Spear-Fishing/refs/heads/main/LHub_SpearFishing.lua"))()
+
+-- ========================================================
+-- 💎 4. MEMANCING CUY [PREMIUM]
+-- ========================================================
+elseif placeId == 89596967204087 then
+    notify("L-HUB | PREMIUM", "Memancing Cuy Ditemukan! Loading script...")
+    
+    -- Link Memancing Cuy Premium
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/momo77s/L-Hub-Script-MancingCuy-/main/Premium.lua"))()
+
+-- ========================================================
+-- 🦈 5. TITAN FISHING [FREE]
+-- ========================================================
+elseif placeId == 101918341695535 then
+    notify("L-HUB | TITAN", "Game Ditemukan! Loading script Titan Fishing...")
+    
+    -- Link Titan Fishing
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/momo77s/L-HUB-Titan-Fishing/refs/heads/main/TitanFishing.lua"))()
+
+-- ========================================================
+-- ❌ GAME TIDAK DIKENAL
+-- ========================================================
 else
-	v3("❌ L-HUB ERROR", LUAOBFUSACTOR_DECRYPT_STR_0("\224\85\125\17\249\10\206\80\113\31\249\26\206\80\101\31\172\16\192\21\48\92\144\58\157\20", "\126\167\52\16\116\217") .. tostring(v0) .. ")");
-	warn(LUAOBFUSACTOR_DECRYPT_STR_0("\228\99\8\149\182\89\217\218\60\47\146\238\89\219\201\35\37\192\176\28\242\207\47\46\192\132\21\253\203\43\9\132\244", "\156\168\78\64\224\212\121") .. tostring(v0) .. LUAOBFUSACTOR_DECRYPT_STR_0("\71\236\160\194\18\227\229\207\3\239\229\202\14\174\161\207\19\239\167\207\20\235\235", "\174\103\142\197"));
+    notify("❌ L-HUB ERROR", "Game tidak didukung! (ID: " .. tostring(placeId) .. ")")
+    warn("L-Hub Error: Game dengan PlaceId " .. tostring(placeId) .. " belum ada di database.")
 end
